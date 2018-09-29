@@ -97,10 +97,21 @@ button:active {
 }
 
 .weather__info {
-  width: 60%;
+  width: 100%;
   font-size: 20px;
   font-weight: 200;
   letter-spacing: 2px;
+  height: 60%;
+
+}
+
+.weather__info__forcast {
+  width: 100%;
+  font-size: 20px;
+  font-weight: 200;
+  letter-spacing: 2px;
+  height: 60%;
+  overflow-y: scroll;
 }
 
 .weather__key {
