@@ -9,13 +9,13 @@ jobs:
       - run: npm install -g bats
       - run: bats -v
   cypress-run:
-        runs-on: ubuntu-latest
-        steps:
-          - name: Checkout
-            uses: actions/checkout@v2
-          - name: Run blog test
-            uses: cypress-io/github-action@v1
-            with:
-              start: npm start
-              wait-on: 'http://0.0.0.0:3000/'
-              config: baseUrl=http://0.0.0.0:3000/
+    runs-on: ubuntu-latest
+    steps:
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Run blog test
+        uses: cypress-io/github-action@v1
+        with:
+          start: npm start
+          wait-on: 'http://0.0.0.0:3000/'
+          config: baseUrl=http://0.0.0.0:3000/
