@@ -10,5 +10,8 @@ jobs:
       - run: bats -v
   cypress-run:
     runs-on: ubuntu-latest
-    steps:
-      - run: npm run cypress:run
+    steps: 
+      - name: Checkout
+        uses: actions/checkout@v2
+      - name: Cypress run
+        uses: cypress-io/github-action@v1
