@@ -13,12 +13,11 @@ jobs:
     steps:
       - name: Checkout
         uses: actions/checkout@v2
-        run: npm start
         with:
           repository: steveflint3/weather-app
-      #     ref: main
-      #     start: npm start
-      #     wait-on: 'http://0.0.0.0:3000/'
+          ref: main
+          start: npm start
+          # wait-on: 'http://0.0.0.0:3000/'
       # - name: Checkout
       #   uses: actions/checkout@v2
       #   with:
