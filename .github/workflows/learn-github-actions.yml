@@ -17,10 +17,8 @@ jobs:
           repository: steveflint3/weather-app
           ref: master
           run: |
-            npm start
+            npm start &
             echo "npm has started"
-
-          # wait-on: 'http://0.0.0.0:3000/'
       - name: Checkout
         uses: actions/checkout@v2
         with:
