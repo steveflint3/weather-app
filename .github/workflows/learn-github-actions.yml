@@ -18,7 +18,7 @@ jobs:
           ref: master
       - name: Start App
         run: |
-          ls
+          npm i
           npm start &
           echo "npm has started"
       - name: Checkout
