@@ -18,11 +18,11 @@ jobs:
           ref: master
           start: npm start
           wait-on: 'http://0.0.0.0:3000/'
-      # - name: Checkout
-      #   uses: actions/checkout@v2
-      #   with:
-      #     repository: steveflint3/weather-tests
-      #     ref: main
+      - name: Checkout
+        uses: actions/checkout@v2
+        with:
+          repository: steveflint3/weather-tests
+          ref: main
       # - name: Run Weather App Test
       #   uses: cypress-io/github-action@v2
       #   with:
