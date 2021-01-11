@@ -23,7 +23,7 @@ jobs:
           repository: steveflint3/weather-tests
           ref: main
       - name: Run Weather App Test
-      #   uses: cypress-io/github-action@v2
+        uses: cypress-io/github-action@v2
       # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
