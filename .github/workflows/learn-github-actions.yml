@@ -18,7 +18,6 @@ jobs:
           ref: master
       - name: Start App
         run: |
-          cd weather-app
           npm start &
           echo "npm has started"
       - name: Checkout
