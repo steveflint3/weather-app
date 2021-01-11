@@ -12,11 +12,11 @@ jobs:
     runs-on: ubuntu-latest
     steps:
       - uses: actions/checkout@v2
-        with:
-          repository: steveflint3/weather-app
-          ref: master
-          start: npm start
-          wait-on: 'http://0.0.0.0:3000/'
+        # with:
+        #   repository: steveflint3/weather-app
+        #   ref: master
+        #   start: npm start
+        #   wait-on: 'http://0.0.0.0:3000/'
         run: npm start
       # - uses: actions/checkout@v2
       #   with:
