@@ -11,25 +11,19 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      - name: Checkout
-        uses: actions/checkout@v2
+      - uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-app
           ref: master
-          start: npm start
-          wait-on: 'http://0.0.0.0:3000/'
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: steveflint3/weather-tests
-          ref: main
-      - name: Run Weather App Test
-        uses: cypress-io/github-action@v2
-        with:
-          repository: steveflint3/weather-tests
-          ref: main
-          wait-on: 'http://0.0.0.0:3000/'
-          config: baseUrl=http://0.0.0.0:3000/
+      - uses: npm start
+      # - uses: actions/checkout@v2
+      #   with:
+      #     repository: steveflint3/weather-tests
+      #     ref: main
+      # - uses: cypress-io/github-action@v2
+      #   with:
+      #     wait-on: 'http://0.0.0.0:3000/'
+      #     config: baseUrl=http://0.0.0.0:3000/
       # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
