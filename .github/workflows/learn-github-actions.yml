@@ -14,7 +14,7 @@ jobs:
       - name: Checkout
         uses: actions/checkout@v2
         with:
-          repository: steveflint3/weather-test
+          repository: steveflint3/weather-tests
           ref: master
       - name: Run Weather App Test
         uses: cypress-io/github-action@v2
