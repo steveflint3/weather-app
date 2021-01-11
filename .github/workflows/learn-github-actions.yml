@@ -16,7 +16,6 @@ jobs:
         with:
           start: npm start
           wait-on: 'http://0.0.0.0:3000/'
-          config: baseUrl=http://0.0.0.0:3000/
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -25,7 +24,6 @@ jobs:
       - name: Run Weather App Test
         uses: cypress-io/github-action@v2
         with:
-          start: npm start
           wait-on: 'http://0.0.0.0:3000/'
           config: baseUrl=http://0.0.0.0:3000/
       - name: Upload Cypress Screenshots
