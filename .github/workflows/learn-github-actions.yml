@@ -16,9 +16,11 @@ jobs:
         with:
           repository: steveflint3/weather-app
           ref: master
-          run: |
-            npm start &
-            echo "npm has started"
+      - name: Start App
+        run: |
+          cd weather-app
+          npm start &
+          echo "npm has started"
       - name: Checkout
         uses: actions/checkout@v2
         with:
