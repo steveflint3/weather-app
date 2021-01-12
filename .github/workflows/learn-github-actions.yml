@@ -26,11 +26,8 @@ jobs:
         with:
           repository: steveflint3/weather-tests
           ref: main
-      - name: Run Weather App Test
-        uses: cypress-io/github-action@v2
-        with:
-          wait-on: 'localhost:3000/'
-          config: baseUrl=localhost:3000/
+      - name: Run NPM Test
+        run: npm run test
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
