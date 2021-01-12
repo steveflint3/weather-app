@@ -29,7 +29,7 @@ jobs:
       - name: Run Weather App Test
         uses: cypress-io/github-action@v2
         with:
-          wait-on: 'http://0.0.0.0:3000/'
+          wait-on: 'http://localhost:3000/'
           config: baseUrl=http://0.0.0.0:3000/
     # - name: Upload Cypress Screenshots
       #   if: failure()
