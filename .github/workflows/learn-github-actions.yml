@@ -11,17 +11,11 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
-      # might not need node step
-      - uses: actions/checkout@v2
-      - name: Use Node.js
-        uses: actions/setup-node@v1
-        with:
-          node-version: '12.x'
       - name: Checkout
         uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-app
-          # ref: master
+          ref: master
       - name: Start App
         run: |
           npm install
@@ -38,10 +32,6 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
       
-      # - name: Run NPM Test
-      #   run: |
-      #     npm i
-      #     npm run cypress:run
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
