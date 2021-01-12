@@ -29,8 +29,8 @@ jobs:
       - name: Run Weather App Test
         uses: cypress-io/github-action@v2
         with:
-          wait-on: 'http://localhost:3000/'
-          config: baseUrl=http://localhost:3000/
+          wait-on: 'localhost:3000/'
+          config: baseUrl=localhost:3000/
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
