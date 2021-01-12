@@ -21,13 +21,13 @@ jobs:
           npm i
           npm start &
           echo "npm has started"
-      - name: Checkout
-        uses: actions/checkout@v2
-        with:
-          repository: steveflint3/weather-tests
-          ref: main
-      - name: Run NPM Test
-        run: ./node_modules/.bin/cypress run --spec ./cypress/integration/weather_test.js
+      # - name: Checkout
+      #   uses: actions/checkout@v2
+      #   with:
+      #     repository: steveflint3/weather-tests
+      #     ref: main
+      # - name: Run NPM Test
+      #   run: ./node_modules/.bin/cypress run --spec ./cypress/integration/weather_test.js
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
