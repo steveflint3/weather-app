@@ -19,11 +19,10 @@ jobs:
       - name: Start App
         run: |
           npm ci
-          npm start &
+          npm start & npx wait-on http://localhost:3000
           echo "npm has started"
           sleep 20
           curl http://localhost:3000
-          npx wait-on http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
