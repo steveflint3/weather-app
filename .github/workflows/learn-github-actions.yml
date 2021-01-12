@@ -18,11 +18,12 @@ jobs:
           # ref: master
       - name: Start App
         run: |
-          npm i
+          npm ci
           npm start &
           echo "npm has started"
           sleep 20
           curl http://localhost:3000
+          npx wait-on http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -30,7 +31,7 @@ jobs:
           ref: main
       - name: Run NPM Test
         run: |
-          npm i
+          npm ci
           npm run cypress:run
     # - name: Upload Cypress Screenshots
       #   if: failure()
