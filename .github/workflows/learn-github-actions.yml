@@ -24,7 +24,7 @@ jobs:
           # ref: master
       - name: Start App
         run: |
-          npm i
+          npm install
           npm start &
           echo "npm has started"
           sleep 20
