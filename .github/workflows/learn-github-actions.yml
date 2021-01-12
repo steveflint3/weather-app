@@ -38,9 +38,7 @@ jobs:
       - name: Cypress run
         uses: cypress-io/github-action@v2
         with:
-          build: npm run build
-          start: npm start
-          wait-on: http://localhost:3000
+          project: ./cypress/integration/weather_test.js
       # - name: Run NPM Test
       #   run: |
       #     npm i
