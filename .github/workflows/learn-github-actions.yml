@@ -28,15 +28,15 @@ jobs:
           npm start &
           echo "npm has started"
           sleep 20
-          curl http://127.0.0.1:3000
-          npx wait-on http://127.0.0.1:3000
+          curl http://localhost:3000
+          npx wait-on http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-tests
           ref: main
       - name: Cypress run
-        uses: cypress-io/github-action@v1
+        uses: cypress-io/github-action@v2
         with:
           build: npm run build
           start: npm start
