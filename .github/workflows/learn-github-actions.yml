@@ -11,6 +11,7 @@ jobs:
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+      # might not need node step
       - uses: actions/checkout@v2
       - name: Use Node.js
         uses: actions/setup-node@v1
@@ -27,8 +28,8 @@ jobs:
           npm start &
           echo "npm has started"
           sleep 20
-          curl http://localhost:3000
-          npx wait-on http://localhost:3000
+          curl http://127.0.0.1:3000
+          npx wait-on http://127.0.0.1:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
