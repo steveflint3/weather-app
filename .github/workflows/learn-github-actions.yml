@@ -22,6 +22,7 @@ jobs:
           npm start &
           echo "npm has started"
           sleep 20
+          curl http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
