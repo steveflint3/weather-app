@@ -19,7 +19,7 @@ jobs:
       - name: Start App
         run: |
           npm install
-          npm start & wait-on http://localhost:3000
+          npm start
           echo "npm has started"
       - name: Checkout
         uses: actions/checkout@v2
