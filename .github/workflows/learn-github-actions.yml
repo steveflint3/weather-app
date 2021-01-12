@@ -19,22 +19,15 @@ jobs:
       - name: Start App
         run: |
           npm install
-          npm start &
+          npm start & wait-on http://localhost:3000
           echo "npm has started"
-          sleep 20
-          curl http://localhost:3000
-          npx wait-on http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-tests
           ref: main
-      - name: Run blog test
+      - name: Cypress run
         uses: cypress-io/github-action@v2
-        with:
-          wait-on: 'http://localhost:3000'
-          config: baseUrl=https://localhost:3000
-      
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
