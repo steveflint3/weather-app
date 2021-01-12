@@ -23,7 +23,7 @@ jobs:
           ref: main
       - name: Start App
         run: |
-          cd weather-app
+          ls
           npm start &
           echo "npm has started"
       - name: Run Weather App Test
