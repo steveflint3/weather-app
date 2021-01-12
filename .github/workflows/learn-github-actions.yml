@@ -27,7 +27,7 @@ jobs:
           repository: steveflint3/weather-tests
           ref: main
       - name: Run NPM Test
-        run: npm run cypress:run
+        run: ./node_modules/.bin/cypress run --spec ./cypress/integration/weather_test.js
     # - name: Upload Cypress Screenshots
       #   if: failure()
       #   uses: actions/upload-artifact@v1
