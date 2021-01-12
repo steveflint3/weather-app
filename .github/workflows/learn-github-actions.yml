@@ -1,16 +1,21 @@
 name: learn-github-actions
 on: [push]
 jobs:
-  check-bats-version:
-    runs-on: ubuntu-latest
-    steps:
-      - uses: actions/checkout@v2
-      - uses: actions/setup-node@v1
-      - run: npm install -g bats
-      - run: bats -v
+  # check-bats-version:
+  #   runs-on: ubuntu-latest
+  #   steps:
+  #     - uses: actions/checkout@v2
+  #     - uses: actions/setup-node@v1
+  #     - run: npm install -g bats
+  #     - run: bats -v
   cypress-run:
     runs-on: ubuntu-latest
     steps:
+      - uses: actions/checkout@v2
+      - name: Use Node.js
+        uses: actions/setup-node@v1
+        with:
+          node-version: '12.x'
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -18,11 +23,12 @@ jobs:
           # ref: master
       - name: Start App
         run: |
-          npm ci
-          npm start & npx wait-on http://localhost:3000
+          npm i
+          npm start &
           echo "npm has started"
           sleep 20
           curl http://localhost:3000
+          npx wait-on http://localhost:3000
       - name: Checkout
         uses: actions/checkout@v2
         with:
@@ -30,7 +36,7 @@ jobs:
           ref: main
       - name: Run NPM Test
         run: |
-          npm ci
+          npm i
           npm run cypress:run
     # - name: Upload Cypress Screenshots
       #   if: failure()
