@@ -15,7 +15,7 @@ jobs:
         uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-app
-          ref: master
+          # ref: master
       - name: Start App
         run: |
           npm i
