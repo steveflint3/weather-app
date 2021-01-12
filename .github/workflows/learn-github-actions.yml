@@ -37,8 +37,7 @@ jobs:
           ref: main
       - name: Cypress run
         uses: cypress-io/github-action@v2
-        with:
-          project: ./cypress
+      
       # - name: Run NPM Test
       #   run: |
       #     npm i
