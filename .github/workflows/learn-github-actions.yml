@@ -22,7 +22,7 @@ jobs:
           npm start & npx wait http://localhost:3000/
           EXPOSE 3000
           echo "npm has started"
-          curl http://localhost:3000/
+          netstat -a
       - name: Checkout
         uses: actions/checkout@v2
         with:
