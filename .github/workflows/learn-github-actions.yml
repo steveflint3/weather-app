@@ -21,7 +21,7 @@ jobs:
           npm install
           npm start & npx wait http://localhost:3000/
           echo "npm has started"
-          netstat -a
+          lsof -Pi :3000 -sTCP:LISTEN
       - name: Checkout
         uses: actions/checkout@v2
         with:
