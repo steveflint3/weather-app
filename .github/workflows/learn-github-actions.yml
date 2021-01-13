@@ -21,15 +21,18 @@ jobs:
           npm install
           npm start & npx wait http://localhost:3000/
           echo "npm has started"
-          lsof -Pi :3000 -sTCP:LISTEN
       - name: Checkout
         uses: actions/checkout@v2
         with:
           repository: steveflint3/weather-tests
           ref: main
       - name: Cypress run
-        run: lsof -Pi :3000 -sTCP:LISTEN
-        uses: cypress-io/github-action@v2
+        run: |
+          curl http://localhost:3000/
+          lsof -Pi :3000 -sTCP:LISTEN
+          npm i
+          lsof -Pi :3000 -sTCP:LISTEN
+          npm run cypress:run
 
     # - name: Upload Cypress Screenshots
       #   if: failure()
