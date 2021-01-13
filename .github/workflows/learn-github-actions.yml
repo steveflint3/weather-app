@@ -28,6 +28,7 @@ jobs:
           repository: steveflint3/weather-tests
           ref: main
       - name: Cypress run
+        run: lsof -Pi :3000 -sTCP:LISTEN
         uses: cypress-io/github-action@v2
 
     # - name: Upload Cypress Screenshots
